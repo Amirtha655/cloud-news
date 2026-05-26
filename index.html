@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud News Dashboard</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        margin: 0;
+        background: #f5f7fb;
+        color: #111827;
+      }
+      .ticker {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border-bottom: 1px solid #1e3a8a;
+        background: #1d4ed8;
+        color: #ffffff;
+        height: 52px;
+      }
+      .ticker__label {
+        flex: 0 0 auto;
+        padding: 0 1rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        background: #1e3a8a;
+      }
+      .ticker__viewport {
+        flex: 1;
+        overflow: hidden;
+      }
+      .ticker__track {
+        display: inline-block;
+        white-space: nowrap;
+        padding-left: 100%;
+        animation: ticker-scroll 22s linear infinite;
+      }
+      .ticker__track span {
+        margin-right: 3rem;
+      }
+      @keyframes ticker-scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      main {
+        max-width: 920px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      h1 {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ticker" aria-label="Breaking news ticker">
+      <div class="ticker__label">Breaking News</div>
+      <div class="ticker__viewport">
+        <div class="ticker__track">
+          <span>AWS launches expanded AI acceleration grants for startups.</span>
+          <span>Major cloud providers announce stricter default security baselines.</span>
+          <span>Serverless usage rises as enterprises modernize legacy workloads.</span>
+          <span>FinOps teams report reduced spend via automated rightsizing.</span>
+        </div>
+      </div>
+    </div>
+    <main>
+      <h1>Cloud News Dashboard</h1>
+      <p>Latest cloud platform updates and insights.</p>
+    </main>
+  </body>
+</html>

@@ -6,3 +6,8 @@
 ![Deployment](https://img.shields.io/badge/Hosted_On-GitHub_Pages-black?style=for-the-badge&logo=github)
 
 ---
+## 📱 Interface Preview
+
+![AWS Cloud News Dashboard Preview](./dashboard-preview.png)
+
+A premium, dark-themed SaaS dashboard designed to elegantly aggregate live cloud computing feeds.

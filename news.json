@@ -1,0 +1,215 @@
+{
+  "lastUpdated": "2026-05-26T06:07:35.144Z",
+  "items": [
+    {
+      "title": "AWS Weekly Roundup: AWS Local Zones in Istanbul, open-source ExtendDB, Kiro Web, and more (May 25, 2026)",
+      "link": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-aws-local-zones-in-istanbul-open-source-extenddb-kiro-web-and-more-may-25-2026",
+      "source": "AWS News Blog",
+      "pubDate": "2026-05-25T20:11:10.000Z",
+      "summary": "There’s something genuinely energizing about working with startups — something I’ve been doing intensely for more than two years now. Startups operate at a different frequency: the urgency is real, the constraints are…"
+    },
+    {
+      "title": "Amazon SageMaker expands domain management across domain types",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/domain-management-iam-idc",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-22T19:30:00.000Z",
+      "summary": "Amazon SageMaker Unified Studio now provides domain management experience for Identity Center and IAM-based domains outside of AWS console, allows administrators and data management teams to create and manage projects…"
+    },
+    {
+      "title": "New agentic migration assessment capabilities now available with AWS Transform",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/assessment-capabilities-transform",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-22T18:58:00.000Z",
+      "summary": "AWS Transform now offers advanced migration assessment capabilities including what-if scenarios, customizable assumptions, flexible file format support, and multiple new total cost of ownership (TCO) assessment featur…"
+    },
+    {
+      "title": "Amazon SageMaker adds business metadata and governance in IAM-based domains",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/sagemaker-catalog-iam-domains",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-22T18:24:00.000Z",
+      "summary": "Amazon SageMaker Unified Studio now supports business context, metadata and data governance capabilities in IAM-based domains. With this launch, customers using Amazon SageMaker IAM-based domains can add business cont…"
+    },
+    {
+      "title": "AWS Security Agent adds verification scripts for pentest findings",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-security-agent",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-22T17:21:00.000Z",
+      "summary": "AWS Security Agent now generates verification scripts for penetration test findings, enabling security teams to independently reproduce and validate discovered vulnerabilities. Previously, teams manually followed repr…"
+    },
+    {
+      "title": "Amazon WorkSpaces Personal now supports WorkSpace Migration for Linux WorkSpaces",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/workspaces-linux-migration",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-22T16:24:00.000Z",
+      "summary": "Amazon WorkSpaces now supports the WorkSpace Migration feature for all Linux operating systems that Amazon WorkSpaces offers. This allows customers to seamlessly migrate WorkSpaces from one Linux operating system to a…"
+    },
+    {
+      "title": "Amazon Keyspaces (for Apache Cassandra) expands to Asia Pacific (Malaysia) and Asia Pacific (Thailand) Regions",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-keyspaces-malaysia-thailand",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-22T16:00:00.000Z",
+      "summary": "Amazon Keyspaces (for Apache Cassandra) is now available in the Asia Pacific (Malaysia) and Asia Pacific (Thailand) Regions, allowing customers in Asia Pacific Region to build Cassandra-compatible applications with lo…"
+    },
+    {
+      "title": "AWS Clean Rooms now supports mutable payment configurations for collaborations",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-clean-rooms-mutable-payments",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-22T12:00:00.000Z",
+      "summary": "AWS Clean Rooms now supports mutable fine-grained payment configurations for collaboration members. This capability offers customers greater flexibility and control over payment responsibilities as they develop new us…"
+    },
+    {
+      "title": "AWS Secrets Manager adds managed external secrets support for Datadog vended keys and Snowflake Programmatic Access Tokens",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/secrets-manager-managed-external-secrets-datadog-snowflake",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-22T07:00:00.000Z",
+      "summary": "AWS Secrets Manager now extends its managed external secrets capability to include Datadog Keys and Snowflake Programmatic Access Tokens (PATs). Managed external secrets enable customers to automatically rotate third-…"
+    },
+    {
+      "title": "Amazon CloudWatch Logs Insights adds new query commands and functions",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-cloudwatch-logs-insights",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-21T23:00:00.000Z",
+      "summary": "Amazon CloudWatch Logs Insights query language now supports 13 new commands and functions that give you more powerful ways to query, transform, and analyze your logs. Customers analyzing logs in CloudWatch Logs Insigh…"
+    },
+    {
+      "title": "AWS KY3P report now available for third-party supplier due diligence",
+      "link": "https://aws.amazon.com/blogs/security/aws-ky3p-report-now-available-for-third-party-supplier-due-diligence",
+      "source": "AWS Security Blog",
+      "pubDate": "2026-05-21T19:58:03.000Z",
+      "summary": "We’re excited to announce that Amazon Web Services (AWS) has completed the S&P Global Know Your Third Party (KY3P) assessment of its security posture. This assessment demonstrates our continued commitment to meet the…"
+    },
+    {
+      "title": "Amazon EC2 C7i-flex, M7i-flex & M7i instances now available in Asia Pacific (Hyderabad) region",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-ec2-c7i-flex-m7i-flex-m7i-instances-HYD-region",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-21T19:39:00.000Z",
+      "summary": "Starting today, Amazon Elastic Compute Cloud (Amazon EC2) C7i-flex, M7i-flex and M7i instances powered by custom 4th Gen Intel Xeon Scalable processors (code-named Sapphire Rapids) are available in Asia Pacific (Hyder…"
+    },
+    {
+      "title": "SageMaker Unified Studio automates Glue connector provisioning for cross-subnet job retries",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/sagemaker-unified-studio-glue",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-21T19:27:00.000Z",
+      "summary": "Amazon SageMaker Unified Studio now supports automatic creation of connections for Glue job retries across subnets to improve data pipeline resilience. This helps organizations running business-critical data pipelines…"
+    },
+    {
+      "title": "Amazon SageMaker AI now supports OpenAI-compatible APIs for inference endpoints",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-sagemaker-ai-openai-apis",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-21T17:55:00.000Z",
+      "summary": "Amazon SageMaker Inference now supports OpenAI-compatible APIs, so you can use the tools and frameworks you already know, like the OpenAI SDK, LangChain, and Strands Agents, to connect directly to your SageMaker endpo…"
+    },
+    {
+      "title": "Automating identity lifecycle and security with AWS Directory Service APIs",
+      "link": "https://aws.amazon.com/blogs/security/automating-identity-lifecycle-and-security-with-aws-directory-service-apis",
+      "source": "AWS Security Blog",
+      "pubDate": "2026-05-21T16:00:59.000Z",
+      "summary": "Managing identities and access across complex environments has become more critical than ever. AWS Directory Service for Managed Microsoft Active Directory, also known as AWS Managed Microsoft AD, has added new capabi…"
+    },
+    {
+      "title": "Amazon Aurora MySQL 8.4 is now generally available",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-aurora-mysql/8-4",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-21T16:00:00.000Z",
+      "summary": "Amazon Aurora MySQL-Compatible Edition now supports MySQL 8.4, a community MySQL Long Term Support (LTS) major version. Aurora MySQL 8.4 launches with compatibility for community MySQL 8.4.7 and introduces aligned ver…"
+    },
+    {
+      "title": "Amazon RDS Custom now supports the latest GDR updates for Microsoft SQL Server",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-custom-sql-server-latest-gdr-updates-microsoft-sql-server",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-21T07:22:00.000Z",
+      "summary": "Amazon Relational Database Service (Amazon RDS) Custom for SQL Server now supports the latest General Distribution Release (GDR) updates for Microsoft SQL Server. This release includes support for SQL Server 2019 CU32…"
+    },
+    {
+      "title": "Amazon Bedrock expands support for request-level usage attribution",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-bedrock-request-level-usage-attribution",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-20T23:34:00.000Z",
+      "summary": "Amazon Bedrock customers can now attribute model inference usage to specific teams, applications, environments, and experiments at the individual request level on the InvokeModel and InvokeModelWithResponseStream APIs…"
+    },
+    {
+      "title": "Why Policy in Amazon Bedrock AgentCore chose Cedar for securing agentic workflows",
+      "link": "https://aws.amazon.com/blogs/security/why-policy-in-amazon-bedrock-agentcore-chose-cedar-for-securing-agentic-workflows",
+      "source": "AWS Security Blog",
+      "pubDate": "2026-05-20T20:56:03.000Z",
+      "summary": "Agents have agency: they adapt and find multiple ways to solve problems. This autonomy creates a fundamental security challenge: the large language model (LLM) at the heart of the agent is non-deterministic, and its d…"
+    },
+    {
+      "title": "AWS Security Hub now uncovers identity risks from unused access",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-security-hub-unused-access",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-20T20:20:00.000Z",
+      "summary": "Today, AWS Security Hub brings identity risk into the same unified console where central security teams already manage threats, exposures, and posture findings. Security Hub now detects unused IAM permissions, roles,…"
+    },
+    {
+      "title": "Amazon DocumentDB (with MongoDB compatibility) Serverless is now available on DocumentDB 8.0",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/5/docdb8-serverless",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-20T18:17:00.000Z",
+      "summary": "Amazon DocumentDB (with MongoDB compatibility) Serverless, an on-demand, auto-scaling configuration for DocumentDB, is now available on version 8.0. Amazon DocumentDB Serverless automatically scales capacity up or dow…"
+    },
+    {
+      "title": "Security Hub Extended expands to 21 curated partner solutions across 9 categories",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-security-hub-extended",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-20T18:00:00.000Z",
+      "summary": "AWS Security Hub Extended plan now includes 21 curated partner solutions across 9 security categories, adding SentinelOne (endpoint), CyberArk (identity), Sublime (email), Varonis (data security), LayerX (browser), Na…"
+    },
+    {
+      "title": "Amazon SageMaker Unified Studio now supports data quality rule authoring and evaluation",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/smus-data-quality",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-20T17:42:00.000Z",
+      "summary": "Amazon SageMaker Unified Studio now supports data quality rule authoring and evaluation, powered by AWS Glue Data Quality. Data engineers, analysts, and data scientists can define data quality rules, run ruleset evalu…"
+    },
+    {
+      "title": "AWS Security Hub Extended: Why enterprise security products should sell themselves",
+      "link": "https://aws.amazon.com/blogs/security/aws-security-hub-extended-why-enterprise-security-products-should-sell-themselves",
+      "source": "AWS Security Blog",
+      "pubDate": "2026-05-20T17:32:58.000Z",
+      "summary": "Our largest security services customers started the same way every customer does – with a click. They enabled Amazon GuardDuty, Amazon Inspector, AWS WAF, and AWS Security Hub, experienced the benefits in real time, a…"
+    },
+    {
+      "title": "Cyber resilience on AWS: A reference approach for recovery from ransomware and destructive events",
+      "link": "https://aws.amazon.com/blogs/architecture/cyber-resilience-on-aws-a-reference-approach-for-recovery-from-ransomware-and-destructive-events",
+      "source": "AWS Architecture Blog",
+      "pubDate": "2026-05-20T17:32:57.000Z",
+      "summary": "Cyber resilience is the ability to recover workloads to a known-good state after an adversary has affected the environment. Prevention works to keep threat actors out and detection works to find them quickly. Cyber re…"
+    },
+    {
+      "title": "AWS announces ExtendDB, an open source DynamoDB-compatible adapter",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-extenddb-dynamodb",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-20T17:00:00.000Z",
+      "summary": "Today, Amazon Web Services (AWS) announced version 0.1 of ExtendDB, an open source project that implements the Amazon DynamoDB API with pluggable storage backends. Amazon DynamoDB is a serverless, fully managed NoSQL…"
+    },
+    {
+      "title": "AWS Billing Conductor Improves Account Visibility with Billing Transfer Inventory",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-billing-conductor-billing-transfer",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-20T16:28:00.000Z",
+      "summary": "AWS Billing Conductor Console now enables you to see which accounts have received or accepted billing transfer invites but still lack access to pro forma billing data. This page helps customers detect and close gaps i…"
+    },
+    {
+      "title": "AWS Transform now modernizes networks during migrations",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-transform-network-modernization",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-20T14:53:00.000Z",
+      "summary": "Network migration teams previously spent days manually reviewing network designs and discovered conflicts only at deployment. AWS Transform now includes two new capabilities that solve both. A new modernization engine…"
+    },
+    {
+      "title": "Announcing the general availability of a new AWS Local Zone in Istanbul, Türkiye",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-local-zones-istanbul-turkiye",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-20T14:00:00.000Z",
+      "summary": "Today, AWS announces the general availability of a new AWS Local Zone in Istanbul, Türkiye, bringing AWS infrastructure closer to end users, while enabling organizations to meet data residency requirements by storing…"
+    },
+    {
+      "title": "AWS Transfer Family web apps now support federated permissions with IAM Identity Center across AWS Regions",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-transfer-family-federated-permissions-across-regions",
+      "source": "AWS What's New",
+      "pubDate": "2026-05-20T10:00:00.000Z",
+      "summary": "AWS Transfer Family web apps now support federated permissions with AWS IAM Identity Center across multiple AWS Regions. Previously, you could only create Transfer Family web apps in the Region where your IAM Identity…"
+    }
+  ]
+}

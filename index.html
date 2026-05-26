@@ -1,88 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cloud News Dashboard</title>
-    <style>
-      :root {
-        color-scheme: light;
-        font-family: Arial, sans-serif;
-      }
-      body {
-        margin: 0;
-        background: #f5f7fb;
-        color: #111827;
-      }
-      .ticker {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        border-bottom: 1px solid #1e3a8a;
-        background: #1d4ed8;
-        color: #ffffff;
-        height: 52px;
-      }
-      .ticker__label {
-        flex: 0 0 auto;
-        padding: 0 1rem;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        background: #1e3a8a;
-      }
-      .ticker__viewport {
-        flex: 1;
-        overflow: hidden;
-      }
-      .ticker__track {
-        display: inline-block;
-        white-space: nowrap;
-        padding-left: 100%;
-        animation: ticker-scroll 22s linear infinite;
-      }
-      .ticker__track span {
-        margin-right: 3rem;
-      }
-      @keyframes ticker-scroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-100%);
-        }
-      }
-      main {
-        max-width: 920px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-      }
-      h1 {
-        margin-top: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="ticker" aria-label="Breaking news ticker">
-      <div class="ticker__label">Breaking News</div>
-      <div class="ticker__viewport">
-        <div class="ticker__track">
-          <span>AWS launches expanded AI acceleration grants for startups.</span>
-          <span>Major cloud providers announce stricter default security baselines.</span>
-          <span>Serverless usage rises as enterprises modernize legacy workloads.</span>
-          <span>FinOps teams report reduced spend via automated rightsizing.</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AWS Cloud News Dashboard with real-time updates from official AWS RSS feeds." />
+  <title>AWS Cloud News</title>
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    /* Dynamic Ticker Integration Styles */
+    .breaking-news-ticker {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #ff9900; /* AWS Brand Orange accent for premium feel */
+      color: #0f1419; /* Dark background font color match */
+      height: 40px;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(255, 153, 0, 0.3);
+      font-weight: 700;
+    }
+    .ticker__label {
+      flex: 0 0 auto;
+      padding: 0 1.25rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      background: #e08500;
+      letter-spacing: 0.05em;
+    }
+    .ticker__viewport {
+      flex: 1;
+      overflow: hidden;
+    }
+    .breaking-news-track {
+      display: inline-block;
+      white-space: nowrap;
+      padding-left: 100%;
+      animation: ticker-scroll 25s linear infinite;
+    }
+    @keyframes ticker-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="breaking-news-ticker" role="region" aria-label="Breaking news ticker">
+    <div class="ticker__label">Breaking News</div>
+    <div class="ticker__viewport">
+      <span class="breaking-news-track">
+        AWS launches expanded AI acceleration grants for startups &nbsp;|&nbsp; 
+        Major cloud providers announce stricter default security baselines &nbsp;|&nbsp; 
+        Serverless usage rises as enterprises modernize legacy workloads &nbsp;|&nbsp; 
+        FinOps teams report reduced cloud spend via automated rightsizing
+      </span>
+    </div>
+  </div>
+
+  <div class="bg-glow bg-glow-top" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-bottom" aria-hidden="true"></div>
+  
+  <div class="app">
+    <header class="header">
+      <div class="brand-wrap">
+        <div class="brand-mark" aria-hidden="true">
+          <span class="brand-cloud">☁</span>
+          <span class="brand-aws">AWS</span>
+        </div>
+        <div>
+          <h1>AWS Cloud News</h1>
+          <p class="subtitle">Real-time Updates from Official Sources</p>
         </div>
       </div>
-    </div>
+      <p id="itemCount" class="item-count">Loading latest updates...</p>
+    </header>
+
     <main>
-      <h1>Cloud News Dashboard</h1>
-      <p>Latest cloud platform updates and insights.</p>
+      <section class="tabs-section" aria-label="Filter news by source">
+        <div id="filterTabs" class="tabs" role="tablist" aria-label="News source filters"></div>
+      </section>
+
+      <section id="newsGrid" class="news-grid" aria-live="polite"></section>
+      <section id="emptyState" class="empty-state hidden" aria-live="polite">
+        No articles available for this source yet.
+      </section>
     </main>
-  </body>
+
+    <footer class="footer">
+      <p id="lastUpdated">Last updated: --</p>
+    </footer>
+  </div>
+
+  <script>
+    (() => {
+      const SOURCE_ORDER = [
+        "AWS What's New",
+        "AWS News Blog",
+        "AWS Architecture Blog",
+        "AWS Security Blog"
+      ];
+
+      const SOURCE_BADGE_CLASS = {
+        "AWS What's New": "tag-whats-new",
+        "AWS News Blog": "tag-news-blog",
+        "AWS Architecture Blog": "tag-architecture",
+        "AWS Security Blog": "tag-security"
+      };
+
+      const state = {
+        items: [],
+        activeSource: "All",
+        lastUpdated: null
+      };
+
+      const tabsRoot = document.getElementById("filterTabs");
+      const newsGrid = document.getElementById("newsGrid");
+      const emptyState = document.getElementById("emptyState");
+      const lastUpdatedEl = document.getElementById("lastUpdated");
+      const itemCountEl = document.getElementById("itemCount");
+
+      function toDate(value) {
+        const date = new Date(value);
+        return Number.isNaN(date.getTime()) ? null : date;
+      }
+
+      function formatRelativeDate(value) {
+        const date = toDate(value);
+        if (!date) return "Unknown date";
+
+        const now = Date.now();
+        const diffMs = now - date.getTime();
+        const seconds = Math.max(Math.floor(diffMs / 1000), 0);
+        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
+
+        if (seconds < 60) return `${seconds}s ago`;
+        if (minutes < 60) return `${minutes}m ago`;
+        if (hours < 24) return `${hours}h ago`;
+        if (days < 30) return `${days}d ago`;
+
+        return date.toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "short",
+          day: "numeric"
+        });
+      }
+
+      function formatLastUpdated(value) {
+        const date = toDate(value);
+        if (!date) return "Last updated: --";
+        return `Last updated: ${date.toLocaleString(undefined, {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+          hour: "numeric",
+          minute: "2-digit"
+        })}`;
+      }
+
+      function getSummary(item) {
+        if (item.summary && item.summary.trim()) return item.summary.trim();
+        return `Read the latest update from ${item.source}.`;
+      }
+
+      function countBySource(items) {
+        const counts = Object.create(null);
+        for (const source of SOURCE_ORDER) counts[source] = 0;
+        for (const item of items) {
+          if (counts[item.source] === undefined) counts[item.source] = 0;
+          counts[item.source] += 1;
+        }
+        return counts;
+      }
+
+      function getFilteredItems() {
+        if (state.activeSource === "All") return state.items;
+        return state.items.filter((item) => item.source === state.activeSource);
+      }
+
+      function renderSkeletons(count = 9) {
+        newsGrid.innerHTML = "";
+        for (let i = 0; i < count; i += 1) {
+          const skeleton = document.createElement("article");
+          skeleton.className = "news-card skeleton-card";
+          skeleton.innerHTML = `
+            <div class="skeleton skeleton-badge"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-line"></div>
+            <div class="skeleton skeleton-line short"></div>
+            <div class="skeleton skeleton-date"></div>
+          `;
+          newsGrid.appendChild(skeleton);
+        }
+      }
+
+      function renderTabs() {
+        const counts = countBySource(state.items);
+        const tabs = [
+          { key: "All", label: "All", count: state.items.length },
+          ...SOURCE_ORDER.map((source) => ({
+            key: source,
+            label: source.replace("AWS ", ""),
+            count: counts[source] || 0
+          }))
+        ];
+
+        tabsRoot.innerHTML = "";
+        for (const tab of tabs) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.role = "tab";
+          button.className = `tab-btn${state.activeSource === tab.key ? " active" : ""}`;
+          button.setAttribute("aria-selected", String(state.activeSource === tab.key));
+          button.dataset.source = tab.key;
+          button.innerHTML = `
+            <span class="tab-label">${tab.label}</span>
+            <span class="tab-count">${tab.count}</span>
+          `;
+          button.addEventListener("click", () => {
+            if (state.activeSource === tab.key) return;
+            state.activeSource = tab.key;
+            renderTabs();
+            renderCards();
+          });
+          tabsRoot.appendChild(button);
+        }
+      }
+
+      function createCard(item, index) {
+        const card = document.createElement("a");
+        card.href = item.link;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+        card.className = "news-card card-fade-in";
+        card.style.setProperty("--stagger", String(index));
+
+        const badgeClass = SOURCE_BADGE_CLASS[item.source] || "tag-default";
+        const summary = getSummary(item);
+
+        card.innerHTML = `
+          <div class="card-top">
+            <span class="source-badge ${badgeClass}">${item.source}</span>
+            <span class="external-icon" aria-hidden="true">↗</span>
+          </div>
+          <h2 class="news-title"></h2>
+          <p class="news-summary"></p>
+          <p class="news-date">${formatRelativeDate(item.pubDate)}</p>
+        `;
+
+        card.querySelector(".news-title").textContent = item.title || "Untitled";
+        card.querySelector(".news-summary").textContent = summary;
+        return card;
+      }
+
+      function renderCards() {
+        const filtered = getFilteredItems();
+
+        itemCountEl.textContent = `${filtered.length} article${filtered.length === 1 ? "" : "s"} shown`;
+        newsGrid.innerHTML = "";
+
+        if (filtered.length === 0) {
+          emptyState.classList.remove("hidden");
+          return;
+        }
+
+        emptyState.classList.add("hidden");
+        const fragment = document.createDocumentFragment();
+        filtered.forEach((item, index) => fragment.appendChild(createCard(item, index)));
+        newsGrid.appendChild(fragment);
+      }
+
+      async function loadNews() {
+        renderSkeletons();
+        try {
+          const response = await fetch("./news.json", { cache: "no-store" });
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          const data = await response.json();
+
+          state.lastUpdated = data.lastUpdated || null;
+          state.items = Array.isArray(data.items) ? data.items.slice() : [];
+          state.items.sort((a, b) => {
+            const aDate = toDate(a.pubDate)?.getTime() || 0;
+            const bDate = toDate(b.pubDate)?.getTime() || 0;
+            return bDate - aDate;
+          });
+
+          renderTabs();
+          renderCards();
+          lastUpdatedEl.textContent = formatLastUpdated(state.lastUpdated);
+        } catch (error) {
+          tabsRoot.innerHTML = "";
+          newsGrid.innerHTML = `
+            <article class="error-state">
+              <h2>Unable to load news feed</h2>
+              <p>Check that <code>news.json</code> exists in the repository root and try refreshing the page.</p>
+            </article>
+          `;
+          itemCountEl.textContent = "Could not load updates";
+          lastUpdatedEl.textContent = "Last updated: unavailable";
+        }
+      }
+
+      loadNews();
+    })();
+  </script>
+</body>
 </html>

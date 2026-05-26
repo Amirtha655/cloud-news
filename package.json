@@ -1,0 +1,12 @@
+{
+  "name": "cloud-news",
+  "version": "1.0.0",
+  "description": "Minimal static AWS cloud news dashboard for GitHub Pages",
+  "private": true,
+  "scripts": {
+    "update-news": "node scripts/fetch-news.js"
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0"
+  }
+}
